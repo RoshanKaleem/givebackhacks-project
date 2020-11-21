@@ -1,6 +1,6 @@
 .main_footer {
   color: white;
-  background-color: #dc3545;
+  background-color: #2f4454;
   padding-top: 3em;
   position: relative;
   bottom: 0;
@@ -9,4 +9,13 @@
   position: relative;
   bottom: 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column {
+  display: flex;
+  align-items: center;
 }
