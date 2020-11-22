@@ -1,7 +1,6 @@
 const async = require("async");
 const ZapClient = require("zaproxy");
-// const apiKey = process.env.API_KEY;
-const apiKey = "skmfjq28h3dva2g56om8e5t783";
+const apiKey = process.env.API_KEY;
 
 exports.scanUrl = function (
   url,

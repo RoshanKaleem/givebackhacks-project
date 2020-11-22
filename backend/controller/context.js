@@ -2,7 +2,7 @@ var ZapClient = require("zaproxy");
 const scan = require("./scanner");
 const apiKey = process.env.API_KEY;
 const zapOptions = {
-  apiKey: apiKey,
+  apiKey:  apiKey,
   proxy: "http://localhost:8080",
 };
 
