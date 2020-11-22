@@ -1,17 +1,22 @@
 const dotenv = require("dotenv").config();
+const exphbs = require("express-handlebars");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { createContext, removeContext } = require("./context");
+const path = require("path");
+const { createContext, removeContext } = require("./controller/context");
+//const { profileEnd } = require("console");
 
 const app = express();
 const port = process.env.PORT || 3000;
-
 app.use(cors());
 
 //middlewares
 app.use(express.json()); // parse form data clients
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname,'views')));
+app.engine('handlebars',exphbs({defaultLayout:'base'}));
+app.set('view engine','handlebars');
 
 // app page
 app.post(`/scan`, (req, res) => {
@@ -24,7 +29,7 @@ app.post(`/scan`, (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello there!");
+  res.render('index');
 });
 
 app.listen(port, () => {
