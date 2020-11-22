@@ -1,0 +1,12 @@
+.results {
+  background-color: #1f2833;
+  text-align: center;
+  color: white;
+}
+
+.result_rating {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 20px;
+}
